@@ -4,4 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :trackable
+
+  encrypts :email, deterministic: true
+
+  def obfuscated_email
+    local, domain = email.split("@")
+    local[1..] = "*" * (local.length - 2) + local[local.length - 1]
+    domain = domain.split(".").map { |part| "*" * part.length }.join(".")
+    "#{local}@#{domain}"
+  end
 end
