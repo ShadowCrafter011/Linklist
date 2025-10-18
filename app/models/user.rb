@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
   encrypts :email, deterministic: true
 
+  has_many :link_lists, dependent: :destroy
+
   def obfuscated_email
     local, domain = email.split("@")
     local[1..] = "*" * (local.length - 2) + local[local.length - 1]

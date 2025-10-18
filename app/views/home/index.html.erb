@@ -11,5 +11,18 @@
     </div>
   <% else %>
     <h4>Hello <%= current_user.obfuscated_email %>. What would you like to do today? <%= link_to "Logout", destroy_user_session_path, class: "link", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to logout?" } %>, <%= link_to "Manage account", edit_user_registration_path, class: "link", data: { turbo_method: :get, turbo_confirm: "Warning: This will show your email address on screen!" } %></h4>
+
+    <div class="rounded border border-zinc-800 mt-5">
+      <div class="border-b border-zinc-800 flex justify-center gap-2 px-2">
+        <h4><%= link_to "Create new list", "create", class: "link" %></h4>
+      </div>
+      <div class="px-2">
+        <% if current_user.link_lists.empty? %>
+          <h4>You currently have no link lists</h4>
+        <% else %>
+
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </div>
