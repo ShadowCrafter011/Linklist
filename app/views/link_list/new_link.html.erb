@@ -1,0 +1,24 @@
+<h1>Add link to list "<%= @link.link_list.name %>"</h1>
+<div class="flex justify-center">
+    <%= link_to "Cancel", list_path(@link.link_list), class: "link" %>
+</div>
+
+<ul>
+    <% @link.errors.full_messages.each do |message| %>
+    <li class="bg-red-200 border rounded border-red-500 p-2 text-black mb-2"><%= message %></li>
+    <% end %>
+</ul>
+
+<%= form_with model: @link, url: list_add_link_path, method: :put do |form| %>
+    <div class="field">
+        <%= form.text_field :name, placeholder: "Link name (optional)", autofocus: true %>
+    </div>
+
+    <div class="field">
+        <%= form.text_area :link, placeholder: "URL (requires http://)" %>
+    </div>
+
+    <div class="actions">
+        <%= form.submit "Add link", class: "account-button" %>
+    </div>
+<% end %>

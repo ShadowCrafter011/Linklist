@@ -14,13 +14,19 @@
 
     <div class="rounded border border-zinc-800 mt-5">
       <div class="border-b border-zinc-800 flex justify-center gap-2 px-2">
-        <h4><%= link_to "Create new list", "create", class: "link" %></h4>
+        <h4><%= link_to "Create new list", new_list_path, class: "link" %></h4>
       </div>
-      <div class="px-2">
+      <div>
         <% if current_user.link_lists.empty? %>
           <h4>You currently have no link lists</h4>
         <% else %>
-
+          <div class="divide-y divide-zinc-800">
+            <% current_user.link_lists.each do |list| %>
+              <%= link_to list_path(list), class: "block p-2 hover:bg-zinc-800 transition-colors" do %>
+                <%= list.name %>
+              <% end %>
+            <% end %>
+          </div>
         <% end %>
       </div>
     </div>

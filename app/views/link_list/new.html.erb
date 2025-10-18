@@ -1,0 +1,18 @@
+<div>
+  <h1 class="font-bold text-4xl">Create a new list</h1>
+  <%= form_with model: @link_list, url: new_list_path, method: :put do |form| %>
+    <ul>
+      <% @link_list.errors.full_messages.each do |message| %>
+        <li class="bg-red-200 border rounded border-red-500 p-2 text-black mb-2"><%= message %></li>
+      <% end %>
+    </ul>
+
+    <div class="field">
+      <%= form.text_field :name, placeholder: "List name", autofocus: true %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit "Create list", class: "account-button" %>
+    </div>
+  <% end %>
+</div>

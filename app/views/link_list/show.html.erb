@@ -1,0 +1,22 @@
+<h1><%= @link_list.name %></h1>
+<% content_for :title, "LinkList - #{@link_list.name}" %>
+<div class="flex justify-center">
+  <%= link_to "Go back", root_path, class: "link" %>
+</div>
+
+<div class="rounded border border-zinc-800 mt-5">
+  <div class="border-b border-zinc-800 flex justify-center gap-2 px-2">
+    <h4><%= link_to "Add link", list_add_link_path, class: "link" %></h4>
+  </div>
+  <div>
+    <% if @link_list.links.empty? %>
+      <h4>There are currently no links in this list</h4>
+    <% else %>
+      <div class="divide-y divide-zinc-800">
+        <% @link_list.links.each do |link| %>
+          <%= link_to (link.name.present? ? link.name : link.link), link.link, class: "link block p-2", allow_other_host: true, target: :blank %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

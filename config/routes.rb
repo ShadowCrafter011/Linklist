@@ -12,4 +12,15 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "home#index"
+
+  scope :list do
+    get "create", to: "link_list#new", as: "new_list"
+    put "create", to: "link_list#create"
+    scope ":link_list_id" do
+      get "/", to: "link_list#show", as: "list"
+      get "add", to: "link_list#new_link", as: "list_add_link"
+      put "add", to: "link_list#create_link"
+      delete ":destroy_token", to: "link_list#destroy", as: "destroy_list"
+    end
+  end
 end
