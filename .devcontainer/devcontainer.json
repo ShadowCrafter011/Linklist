@@ -4,7 +4,20 @@
 	"name": "Ruby on Rails & Postgres",
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"customizations": {
+        "vscode": {
+            "extensions": [
+                "esbenp.prettier-vscode",
+                "shopify.ruby-lsp",
+                "misogi.ruby-rubocop",
+                "dbaeumer.vscode-eslint",
+                "bradlc.vscode-tailwindcss",
+                "ms-vscode-remote.remote-containers",
+                "eamodio.gitlens"
+            ]
+        }
+    }
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
