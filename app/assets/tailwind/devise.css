@@ -1,0 +1,25 @@
+@layer components {
+    div.field {
+        @apply flex flex-row justify-start gap-2;
+    }
+
+    div.field input:not([type='checkbox']) {
+        @apply border rounded border-emerald-500 focus:ring-0 focus:outline-0 p-2 grow mb-2;
+    }
+
+    div.field div.field_with_errors {
+        @apply flex grow;
+    }
+
+    div.field div.field_with_errors input {
+        @apply border-red-500;
+    }
+
+    div.field div.field_with_errors {
+        @apply border-red-500;
+    }
+
+    .actions {
+        @apply flex justify-center mt-2; 
+    }
+}
