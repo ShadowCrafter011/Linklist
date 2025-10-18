@@ -23,4 +23,9 @@ Rails.application.routes.draw do
       delete ":destroy_token", to: "link_list#destroy", as: "destroy_list"
     end
   end
+
+  get "terms-of-service", to: "home#tos", as: "tos"
+  get "privacy-policy", to: "home#privacy", as: "privacy"
+  get "security-policy", to: "home#security", as: "security"
+  get "about", to: "home#about", as: "about"
 end
