@@ -11,11 +11,11 @@
 
 <%= form_with model: @link, url: list_add_link_path, method: :put do |form| %>
     <div class="field">
-        <%= form.text_field :name, placeholder: "Link name (optional)", autofocus: true %>
+        <%= form.text_field :name, placeholder: "Link name (optional)" %>
     </div>
 
     <div class="field">
-        <%= form.text_area :link, placeholder: "URL (requires http://)" %>
+        <%= form.text_area :link, placeholder: "URL (requires http://)", autofocus: true %>
     </div>
 
     <div class="actions">

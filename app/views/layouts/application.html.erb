@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="google-adsense-account" content="ca-pub-1788164139037794">
+    <meta name="description" content="Simple, private and safe link lists">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -21,12 +21,20 @@
     <%# Includes all stylesheet files in app/assets/stylesheets %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1788164139037794" crossorigin="anonymous"></script>
   </head>
 
   <body class="bg-zinc-700 text-white">
-    <main class="container mx-auto mt-8 px-5 flex flex-col gap-2">
+    <main class="container mx-auto mt-8 px-5 flex flex-col gap-2 min-h-[100vh]">
       <%= render partial: "layouts/notifications" %>
       <%= yield %>
     </main>
+    <footer class="border-t border-zinc-800 p-2 flex justify-between mt-5">
+      <span>©<%= Time.now.year %> LinkList</span>
+      <span>
+        <%= link_to "Terms of Service", tos_path, class: "link", target: :blank %> <%= link_to "Privacy Policy", privacy_path, class: "link", target: :blank %> <%= link_to "Security Policy", security_path, class: "link", target: :blank %>
+      </span>
+    </footer>
   </body>
 </html>

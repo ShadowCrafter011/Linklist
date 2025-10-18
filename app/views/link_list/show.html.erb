@@ -14,7 +14,7 @@
     <% else %>
       <div class="divide-y divide-zinc-800">
         <% @link_list.links.each do |link| %>
-          <%= link_to (link.name.present? ? link.name : link.link), link.link, class: "link block p-2", allow_other_host: true, target: :blank %>
+          <%= link_to (link.name.present? ? link.name : link.link), link.link, class: "link block p-2 hover:bg-zinc-800 transition-colors", allow_other_host: true, target: :blank %>
         <% end %>
       </div>
     <% end %>
