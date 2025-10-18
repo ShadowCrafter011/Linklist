@@ -1,6 +1,6 @@
 @layer components {
     .notification-base {
-        @apply p-2 border rounded text-black flex justify-between align-center;
+        @apply p-2 border rounded text-black flex justify-between content-center;
     }
 
     .notice {

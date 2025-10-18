@@ -1,17 +1,20 @@
+<% cached_notice = notice %>
+<% cached_alert = alert %>
+
 <% if params[:debug_alerts] && Rails.env.development? %>
-  <% notice = "Notice debug" %>
-  <% alert = "Alert debug" %>
+  <% cached_notice = "Notice debug" %>
+  <% cached_alert = "Alert debug" %>
 <% end %>
 
-<% if notice.present? %>
+<% if cached_notice %>
   <p class="notification-base notice" data-controller="notification">
-    <%= notice %>
+    <%= cached_notice %>
     <%= render partial: "layouts/close_notification" %>
   </p>
 <% end %>
-<% if alert.present? %>
+<% if cached_alert.present? %>
   <p class="notification-base alert" data-controller="notification">
-    <%= alert %>
+    <%= cached_alert %>
     <%= render partial: "layouts/close_notification" %>
   </p>
 <% end %>

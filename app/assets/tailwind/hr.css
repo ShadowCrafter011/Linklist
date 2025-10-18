@@ -1,0 +1,5 @@
+@layer components {
+    hr {
+        @apply my-2 text-emerald-300;
+    }
+}

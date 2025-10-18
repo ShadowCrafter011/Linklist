@@ -1,0 +1,5 @@
+@layer components {
+    .link {
+        @apply text-emerald-500 underline hover:text-emerald-600 transition-colors;
+    }
+}

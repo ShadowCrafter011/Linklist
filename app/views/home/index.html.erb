@@ -1,3 +1,15 @@
 <div class="flex-grow">
   <h1>Welcome to LinkList</h1>
+  <h2>Simple, private and safe</h2>
+  <hr>
+
+  <% unless user_signed_in? %>
+    <h4 class="mt-20">You need to be singed in in order to use this website</h4>
+    <div class="flex gap-2 sm:flex-row flex-col justify-center">
+      <%= link_to "Create account", new_user_registration_path, class: "account-button" %>
+      <%= link_to "Login", new_user_session_path, class: "account-button" %>
+    </div>
+  <% else %>
+    <h4>Hello <%= current_user.obfuscated_email %>. What would you like to do today? <%= link_to "Logout", destroy_user_session_path, class: "link", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to logout?" } %>, <%= link_to "Manage account", edit_user_registration_path, class: "link", data: { turbo_method: :get, turbo_confirm: "Warning: This will show your email address on screen!" } %></h4>
+  <% end %>
 </div>

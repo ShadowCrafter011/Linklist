@@ -1,0 +1,5 @@
+@layer components {
+    .account-button {
+        @apply p-2 bg-blue-500 rounded border border-blue-800 hover:bg-blue-600 transition-colors sm:w-xl text-center;
+    }
+}
