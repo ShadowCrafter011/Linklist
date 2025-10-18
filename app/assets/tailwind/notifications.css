@@ -1,0 +1,13 @@
+@layer components {
+    .notification-base {
+        @apply p-2 border rounded text-black flex justify-between align-center;
+    }
+
+    .notice {
+        @apply border-green-500 bg-green-200;
+    }
+
+    .alert {
+        @apply border-red-500 bg-red-200; 
+    }
+}

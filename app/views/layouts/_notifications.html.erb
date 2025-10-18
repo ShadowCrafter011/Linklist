@@ -1,0 +1,17 @@
+<% if params[:debug_alerts] && Rails.env.development? %>
+  <% notice = "Notice debug" %>
+  <% alert = "Alert debug" %>
+<% end %>
+
+<% if notice.present? %>
+  <p class="notification-base notice" data-controller="notification">
+    <%= notice %>
+    <%= render partial: "layouts/close_notification" %>
+  </p>
+<% end %>
+<% if alert.present? %>
+  <p class="notification-base alert" data-controller="notification">
+    <%= alert %>
+    <%= render partial: "layouts/close_notification" %>
+  </p>
+<% end %>

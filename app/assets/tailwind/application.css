@@ -1,1 +1,4 @@
 @import "tailwindcss";
+
+@import "./notifications.css";
+@import "./headers.css";

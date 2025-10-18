@@ -32,5 +32,6 @@
     "completion": true,
     "codeLens": true,
     "definition": true
-  }
+  },
+  "editor.indentSize": 2
 }
